@@ -1,0 +1,30 @@
+<div id="mainContainer">
+    <app-navbar [loggedIn]="loggedIn"></app-navbar>
+    <div id="usernameContainer">{{username}}</div>
+    <div id="createRouteContainer">
+        <div id="error">
+            <div *ngIf="submitError">
+                {{submitError}}
+            </div>
+        </div>
+        <app-create-route (onFormSubmit)="submitRoute($event)"></app-create-route>
+    </div>
+    <div id="routesContainer">
+        <div *ngIf="deleteRouteError">
+            Deletion was unsuccessful
+        </div>
+        <div *ngIf="!userRoutes.length">You have no routes!</div>
+        <div *ngFor="let route of userRoutes">
+            <div id="routeContainer" [ngClass]="{'green':route.desiredRouteTime>=route.realRouteTime}">
+                <h2>Route:</h2>
+                <p>route name:{{route.routeName}}</p>
+                <p>route from:{{route.routeFrom.fromLocationAddress}}</p>
+                <p>route to:{{route.routeTo.toLocationAddress}}</p>
+                <p>Desired Route Time:{{route.desiredRouteTime | secondsToTime}}</p>
+                <p>Current Route Time:{{route.realRouteTime | secondsToTime}}</p>
+                <a target="_blank" href="{{route.routeUrl}}">Click here for directions!</a>
+                <button (click)="deleteRoute({routeId:route.routeId})">Delete route</button>
+            </div>
+        </div>
+    </div>
+</div>

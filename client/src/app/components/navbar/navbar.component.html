@@ -1,0 +1,8 @@
+<nav>
+    <button><a href="/">Home</a></button>
+    <button *ngIf="!loggedIn"><div (click)="logInDemo()">Demo Account</div></button>
+    <button *ngIf="!loggedIn"><a href="/login">Login</a></button>
+    <button *ngIf="!loggedIn"><a  href="/register">Register</a></button>
+    <button *ngIf="loggedIn"><a href="/main">Main</a></button>
+    <button *ngIf="loggedIn"><div (click)="logOut()">Log out</div></button>
+</nav>

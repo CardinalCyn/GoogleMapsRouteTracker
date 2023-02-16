@@ -1,0 +1,7 @@
+server/config.py
+server/local-cert.pem
+server/local-key.pem
+client/ssl/local-cert.pem
+client/ssl/local-key.pem
+client/.angular
+client/node_modules

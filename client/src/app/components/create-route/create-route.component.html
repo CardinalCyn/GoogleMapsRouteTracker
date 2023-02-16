@@ -1,0 +1,21 @@
+<div id="createRouteContainer">
+    <div *ngIf="showForm===false">
+        <button (click)="displayForm()">Create Route</button>
+    </div>
+    <div id="formContainer" *ngIf="showForm===true">
+        <button (click)="hideForm()">Close form</button>
+        <form (ngSubmit)="onSubmit()">
+            <div id="form-group">
+                <label for="routeName">Route Name</label>
+                <input type="name" name="routeName" id="routeName" [(ngModel)]="routeName" />
+            </div>
+            <app-map (setRouteTo)="setRouteTo($event)" (setRouteFrom)="setRouteFrom($event)"></app-map>
+            <h2>RouteTime:</h2>
+            <label for="routeTimeHours">Hours:</label>
+            <input type="number" name="routeTimeHours" id="routeTimeHours" [(ngModel)]="routeTimeHours" />
+            <label for="routeTimeMinutes">Minutes:</label>
+            <input type="number" name="routeTimeMinutes" id="routeTimeMinutes" [(ngModel)]="routeTimeMinutes" />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
