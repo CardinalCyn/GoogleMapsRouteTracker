@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { faLock,faRoute,faClock,faBell,faMap,faSave } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,18 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HomeComponent {
   constructor(private authService:AuthService) {}
   loggedIn:boolean=false;
-  //checks if user is logged in at start
+
+  faLock= faLock;
+  faRoute=faRoute;
+  faClock=faClock;
+  faBell=faBell;
+  faMap=faMap;
+  faSave=faSave;
+  //checks if user is logged in at start, and gets window width
+  public getScreenWidth: any;
   ngOnInit() {
     this.checkSession();
+    this.getScreenWidth = window.innerWidth;
   }
   //sets data to navbar if user is logged in or not
   checkSession () {
@@ -26,5 +36,10 @@ export class HomeComponent {
         }
       }
     )
+  }
+
+    @HostListener('window:resize', ['$event'])
+    onWindowResize() {
+    this.getScreenWidth = window.innerWidth;
   }
 }

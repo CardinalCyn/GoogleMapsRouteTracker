@@ -36,7 +36,7 @@ def init_get_directions(from_place_id,to_place_id,from_location_address,to_locat
     api_url=(
         'https://maps.googleapis.com/maps/api/directions/json?origin=place_id:'
         +from_place_id+"&destination=place_id:"
-        +to_place_id+"&mode=driving&key="+config.MAPS_API_KEY
+        +to_place_id+"&mode=driving&traffic_model=best_guess&departure_time=now&key="+config.MAPS_API_KEY
     )
     response=requests.get(api_url,timeout=5)
     data=response.json()

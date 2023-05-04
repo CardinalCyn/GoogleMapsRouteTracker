@@ -42,10 +42,10 @@ export class MapComponent {
       this.toSearchField.nativeElement,
     );
     //pushes the labels and input fields parents to top of google map
-    this.map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+    this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(
       this.fromSearchField.nativeElement.parentNode,
     );
-    this.map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+    this.map.controls[google.maps.ControlPosition.LEFT_TOP].push(
       this.toSearchField.nativeElement.parentNode,
     );
     //creates listener to fromsearchbox, when you type, list of places pops up under the field

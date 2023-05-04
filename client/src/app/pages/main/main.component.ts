@@ -43,6 +43,7 @@ export class MainComponent {
       case "validRoute":
         this.submitError="";
         this.createRoute(routeInfo);
+        window.scrollTo(0, 0);
         break;
       default:
         this.submitError=validationResult;

@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module'
 
 import { SocketIoModule,SocketIoConfig } from 'ngx-socket-io';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -20,6 +22,7 @@ import { CreateRouteComponent } from './components/create-route/create-route.com
 import { MapComponent } from './components/map/map.component';
 import { SecondsToTimePipe } from './pipes/time';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const config: SocketIoConfig={url:"https://127.0.0.1:5000",options:{}};
 const appRoutes:Routes=[
@@ -48,7 +51,8 @@ const appRoutes:Routes=[
     CreateRouteComponent,
     MapComponent,
     SecondsToTimePipe,
-    NavbarComponent
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ const appRoutes:Routes=[
     HttpClientModule,
     RouterModule.forRoot(appRoutes, {enableTracing:false}),
     GoogleMapsModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

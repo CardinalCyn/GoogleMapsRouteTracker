@@ -152,7 +152,7 @@ def create_routes(app):
                     return {"status":"sessionNotFound"}
                 username=user_session.get('username')
                 user_routes = get_user_routes(username)
-                if len(user_routes)>10:
+                if len(user_routes)>=10:
                     return {"status":"You have a reached your maximum of 10 routes"}
                 request_data = request.get_json()
                 route_hours=request_data.get("routeTime").get('routeTimeHours')
