@@ -12,7 +12,7 @@ app is structured with pages, components that are rendered by pages/ other compo
 pipe to convert a routes seconds to hours/mins
 services to validate input before sending to server, upload routes, and handle socket io event handling
 
-workflow- user is on a page, checkSession will run, which will call AuthService. That will make an api request to the flask server, which will return if hte user is logged in or not
+workflow- user is on a page, checkSession will run, which will call AuthService. That will make an api request to the flask server, which will return if the user is logged in or not
 on the response, it will set logged in to true or false, and alter the navbar. if youre on the main page, it will send you back to home
 
 navbar- changes based on if user is logged in or not. has ability to make logout request when clicked, and has a demo button which uses a sample account to login
