@@ -1,6 +1,6 @@
-# flask serverside code for GoogleMapsRouteTimer
+# Flask Server-side code for GoogleMapsRouteTimer
 
-# to use this app, you'll need to generate a certificate and key in the server root for https, as well as create config.py with properties:
+to use this app, you'll need to generate a certificate and key in the server root for https, as well as create config.py with properties:
 SESSION_SECRET_KEY='random session secret'
 CLIENT_LINK="https://localhost:4200"
 DB_LINK='mongodb://localhost:27017/'
